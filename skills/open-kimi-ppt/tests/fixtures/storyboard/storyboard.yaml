@@ -1,0 +1,135 @@
+brief:
+  topic: 客服知識庫 AI 助理導入提案
+  audience: 客服部主管與 IT 主管
+  goal: 同意以 8 週 PoC 驗證 AI 助理
+  mode: hybrid
+  duration_min: 10
+  pages: 7
+  min_font: 18
+  register: professional-accessible
+  design: self-directed
+  language: zh-TW
+  assumptions:
+    - 未指定設計系統，採自主設計
+storylines:
+  - name: 效率缺口
+    structure: SCR
+    claim: 六成工單可由既有文件回答，先以 8 週 PoC 驗證 AI 助理能縮短回覆時間
+    facts: [F1, F2, F3]
+    risk: F1 為抽樣數據
+    chosen: true
+    why: 證據最直接，且以小規模 PoC 降低決策門檻
+  - name: 成本節省
+    structure: problem → solution → plan
+    claim: AI 助理可降低客服人力成本
+    facts: [F2]
+    risk: 缺人力成本數據，無法量化
+    chosen: false
+    why: 證據不足
+governing_claim: 六成工單可由既有文件回答，先以 8 週 PoC 驗證 AI 助理能縮短回覆時間
+order: problem → solution → plan
+cover:
+  title: 客服知識庫 AI 助理導入提案
+  subtitle: 以 8 週 PoC 驗證回覆效率
+toc: true
+parts:
+  - title: 現況問題
+    short: 現況
+    claim: 多數工單可由文件回答，但回覆仍仰賴人工搜尋
+    pages:
+      - id: pain
+        title: 六成工單可由既有文件回答，回覆卻平均等 4.5 小時
+        takeaway: 瓶頸在找文件，不在缺文件
+        facts: [F1, F2]
+        points:
+          - 可由文件回答的工單占 62%
+          - 首次回覆平均 4.5 小時
+        layout: split-2-1
+        modules:
+          - role: main
+            kind: chart
+            title: 工單類型分布
+            text: 可由文件回答 62% vs 需人工判斷 38%
+            data:
+              cols: [類型, 占比]
+              rows: [[可由文件回答, 62], [需人工判斷, 38]]
+              format: "0\"%\""
+          - kind: stat
+            title: 首次回覆
+            data: {value: "4.5", unit: " 小時", label: 2025 年平均首次回覆時間}
+  - title: 解決方案
+    short: 方案
+    claim: 以檢索式 AI 助理串接既有知識庫，客服人員確認後回覆
+    pages:
+      - id: solution
+        title: 檢索式 AI 助理：先找文件、再擬回覆、由客服確認
+        takeaway: 人工保留最終確認權，降低錯誤回覆風險
+        facts: [F3]
+        points:
+          - 串接 3,800 份內部文件
+          - 回覆草稿附來源連結
+          - 客服確認後送出
+        layout: hero-top
+        layout_reason: 三個步驟是對等的流程階段
+        modules:
+          - role: main
+            kind: diagram
+            title: 處理流程
+            text: 工單 → 檢索文件 → 擬稿 → 客服確認 → 回覆
+            data:
+              steps:
+                - [工單, 客戶提問, tabler-filled/message-circle]
+                - [檢索, 找出相關文件, tabler-filled/zoom-in]
+                - [擬稿, 附來源連結, tabler-filled/file-text]
+                - [確認, 客服核准後送出, tabler-filled/circle-check]
+          - kind: text
+            title: 檢索
+            icon: tabler-filled/zoom-in
+            text: 在 3,800 份文件中找出相關段落
+          - kind: text
+            title: 擬稿
+            icon: tabler-filled/file-text
+            text: 依段落產生回覆草稿並附來源
+          - kind: text
+            title: 確認
+            icon: tabler-filled/circle-check
+            text: 客服修改或核准後送出
+  - title: 推動計畫
+    short: 計畫
+    claim: 8 週 PoC 以回覆時間與正確率作為是否擴大的依據
+    pages:
+      - id: poc-plan
+        title: 8 週 PoC：兩項指標決定是否擴大導入
+        takeaway: 達標即擴大至全客服中心，未達標則調整範圍
+        facts: []
+        points:
+          - 第 1–2 週：資料整理
+          - 第 3–6 週：試行
+          - 第 7–8 週：評估
+        layout: main-stack
+        modules:
+          - role: main
+            kind: list
+            title: 時程
+            text:
+              - 第 1–2 週：整理文件與權限<br/>清除過期文件，設定可檢索範圍
+              - 第 3–6 週：10 位客服試行<br/>每週檢討錯誤回覆並補文件
+              - 第 7–8 週：比對指標並決議<br/>與試行前四週數據比較
+          - kind: text
+            title: 指標一
+            text: 首次回覆時間
+          - kind: text
+            title: 指標二
+            text: 回覆正確率（抽樣覆核）
+end:
+  title: 決議事項
+  takeaway: 請核准 8 週 PoC 與 10 位客服的試行人力
+  points:
+    - 核准 PoC 時程
+    - 指派試行人員
+closing:
+  title: 謝謝聆聽
+  subtitle: Q & A
+  points:
+    - {icon: check, tone: green, text: 8 週 PoC 驗證 AI 助理}
+    - {icon: people, tone: blue, text: 10 位客服參與試行}
